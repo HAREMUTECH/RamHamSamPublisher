@@ -6,5 +6,7 @@ namespace WebPublisher.Repository
     {
         Task<Book> GetBookAsync(Guid id);
         Task<List<Book>> GetAllBooksAsync();
-    }
+        Task<Book?> GetBookByTitleAsync(string title);
+
+	}
 }

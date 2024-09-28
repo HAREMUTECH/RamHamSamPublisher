@@ -9,7 +9,6 @@ namespace WebPublisher.Dto.Book
         [Required(ErrorMessage = "Description is required")]
         public string Description { get; set; }
         [Required(ErrorMessage = "Year is required")]
-        [MaxLength(4, ErrorMessage = "Yers must be full year like '2024'")]
         public int Year { get; set; }
         [Required(ErrorMessage = "ISBN is required")]
         public string ISBN { get; set; }

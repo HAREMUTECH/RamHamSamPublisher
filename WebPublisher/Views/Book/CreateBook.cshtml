@@ -1,0 +1,44 @@
+﻿@{
+	ViewData["Title"] = "Create Book";
+}
+
+
+<div class="col-md-8">
+
+	<form  asp-controller="Book" asp-action="CreateBook">
+
+		<div class="mb-3">
+			<label class="form-label">Title</label>
+			<input type="text" class="form-control" name="Title" placeholder="Title" required>
+		</div>
+		<div class="mb-3">
+			<label  class="form-label">Description</label>
+			<input type="text" class="form-control" name="Description" required>
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Year</label>
+			<input type="text" class="form-control" name="Year" placeholder="Year" required>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">ISBN</label>
+			<input type="text" class="form-control" name="ISBN" placeholder="ISBN" required>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Quantity</label>
+			<input type="number" class="form-control" name="Quantity" placeholder="Quantity" required>
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Price</label>
+			<input type="number" class="form-control" name="Price" placeholder="Price" required>
+		</div>
+
+		<div class="row"> 
+			<button type="submit" class="btn btn-success">Success</button>
+		</div>
+
+	</form>
+
+</div>

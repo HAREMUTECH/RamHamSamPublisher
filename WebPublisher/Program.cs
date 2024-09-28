@@ -1,4 +1,6 @@
 using WebPublisher.Data;
+using WebPublisher.Repository;
+using WebPublisher.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,6 +11,14 @@ builder.Services.AddControllersWithViews();
 var dbConnection = builder.Configuration.GetConnectionString("DefaultConnection");
 
 builder.Services.AddSqlServer<ApplicationDbContext>(dbConnection);
+
+//Repository
+
+builder.Services.AddScoped<IBookRepository, BookRepository>();
+
+
+//Service
+builder.Services.AddScoped<IBookServices, BookServices>();
 
 var app = builder.Build();
 

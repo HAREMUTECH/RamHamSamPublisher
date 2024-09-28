@@ -21,5 +21,10 @@ namespace WebPublisher.Repository
         {
             return await _dbContext.Books.Where(x => x.Id == id).FirstOrDefaultAsync();
         }
-    }
+
+		public async Task<Book?> GetBookByTitleAsync(string title)
+		{
+			return await _dbContext.Books.Where(x => x.Title.ToLower() == title.ToLower()).FirstOrDefaultAsync();
+		}
+	}
 }

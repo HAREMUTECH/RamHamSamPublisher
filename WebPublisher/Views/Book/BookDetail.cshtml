@@ -1,0 +1,22 @@
+﻿@using WebPublisher.Dto.Book;
+@model BookDto;
+@{
+    ViewData["Title"] = "Book Detail";
+}
+
+<div class="col-md-6"> 
+    <div class="card">
+        <div class="card-header">
+           @Model.Title
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">@Model.Description</h5>
+            <p class="card-text">Price:     @Model.Price</p>
+            <p class="card-text">Quantity:  @Model.Quantity</p>
+            <p class="card-text">ISBN:      @Model.ISBN</p>
+            <p class="card-text">Year:      @Model.Year</p>
+            <a asp-controller="Book" asp-action="UpdateBook"
+               asp-route-id="@Model.Id" class="btn btn-primary">Edit</a>
+        </div>
+    </div>
+</div>

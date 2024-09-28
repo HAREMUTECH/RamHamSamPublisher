@@ -1,5 +1,56 @@
-﻿<h2>Welcome to the Dashboard</h2>
-<p>
-    This is a simple sidebar template using Bootstrap. Customize it to fit your needs!
-</p>
-<!-- Add more content here -->
+﻿@using WebPublisher.Dto.Book;
+@model IEnumerable<BookDto>;
+@{
+	ViewData["Title"] = "Books";
+	var i = 0;
+}
+<a href="@Url.Action("CreateBook","Book")" class="btn btn-secondary">Create New Book</a>
+<br />
+<div class="col-md-10">
+	<table class="table table-responsive">
+		<thead>
+			<tr>
+				<th scope="col">#</th>
+				<th scope="col">Title</th>
+				<th scope="col">Year</th>
+				<th scope="col">ISBN</th>
+				<th scope="col">Quantity</th>
+				<th scope="col">Price</th>
+				<th scope="col">Action</th>
+			</tr>
+		</thead>
+		<tbody>
+
+			@if (Model.Count() > 0)
+			{
+				@foreach (var item in Model)
+				{
+					i++;
+					<tr>
+						<th scope="row">@i</th>
+						<td>@item.Title</td>
+						<td>@item.Year</td>
+						<td>@item.ISBN</td>
+						<td>@item.Quantity</td>
+						<td>@item.Price</td>
+						<td><a asp-controller="Book" asp-action="BookDetail" 
+							asp-route-id="@item.Id" class="btn btn-secondary">Book Detail</a></td>
+						|
+						<td>
+							<a asp-controller="Book" asp-action="DeleteBook"
+							   asp-route-id="@item.Id" class="btn btn-secondary">Delete</a>
+						</td>
+					</tr>
+				}
+
+			}
+			else
+			{
+				<tr>
+					No Record Found
+				</tr>
+			}
+
+		</tbody>
+	</table>
+</div>

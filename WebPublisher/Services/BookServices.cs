@@ -23,7 +23,7 @@ namespace WebPublisher.Services
 
             try
             {
-                var book = await _dbContext.Books.FirstOrDefaultAsync(x => x.Title.ToLower() == request.Title.ToLower());
+                var book = await _bookRepository.GetBookByTitleAsync(request.Title);
 
                 if (book != null)
                 {

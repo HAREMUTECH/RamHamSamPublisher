@@ -1,0 +1,47 @@
+﻿@using WebPublisher.Dto.Book;
+@model BookDto;
+@{
+	ViewData["Title"] = "Edit Book";
+	var id = Context?.GetRouteValue("Id").ToString();
+}
+
+
+<div class="col-md-8">
+
+	<form asp-controller="Book" asp-action="UpdateBook" asp-route-id="@id">
+
+		<div class="mb-3">
+			<label class="form-label">Title</label>
+			<input type="text" class="form-control" name="Title" placeholder="Title" required value="@Model.Title">
+		</div>
+		<div class="mb-3">
+			<label  class="form-label">Description</label>
+			<input type="text" class="form-control" name="Description"  required value="@Model.Description">
+		</div>
+		<div class="mb-3">
+			<label class="form-label">Year</label>
+			<input type="text" class="form-control" name="Year" placeholder="Year" required value="@Model.Year">
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">ISBN</label>
+			<input type="text" class="form-control" name="ISBN" placeholder="ISBN" required value="@Model.ISBN">
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Quantity</label>
+			<input type="number" class="form-control" name="Quantity" placeholder="Quantity" required value="@Model.Quantity">
+		</div>
+
+		<div class="mb-3">
+			<label class="form-label">Price</label>
+			<input type="number" class="form-control" name="Price" placeholder="Price" required value="@Model.Price">
+		</div>
+
+		<div class="row"> 
+			<button type="submit" class="btn btn-success">Update</button>
+		</div>
+
+	</form>
+
+</div>
