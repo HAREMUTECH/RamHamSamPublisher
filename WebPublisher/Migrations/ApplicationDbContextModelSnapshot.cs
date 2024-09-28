@@ -57,7 +57,7 @@ namespace WebPublisher.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Books");
+                    b.ToTable("Books", (string)null);
                 });
 
             modelBuilder.Entity("WebPublisher.Data.BookAuthor", b =>
@@ -95,7 +95,7 @@ namespace WebPublisher.Migrations
 
                     b.HasIndex("BookId");
 
-                    b.ToTable("BookAuthors");
+                    b.ToTable("BookAuthors", (string)null);
                 });
 
             modelBuilder.Entity("WebPublisher.Data.BookAuthor", b =>

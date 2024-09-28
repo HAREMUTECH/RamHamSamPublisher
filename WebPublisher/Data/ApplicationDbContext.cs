@@ -8,9 +8,7 @@ namespace WebPublisher.Data
         {
         }
 
-
         public DbSet<Book> Books { get; set; }
         public DbSet<BookAuthor> BookAuthors { get; set; }
-
     }
 }
